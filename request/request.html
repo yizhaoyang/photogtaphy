@@ -14,49 +14,9 @@
   </head>
   <body>
     <div class="container justify-item-center" >
-        <h1>home page</h1>
+        <h1>request page</h1>
     </div>
 
-    <!--banner-->
-    
-    <div class="container justify-content-center" style="width: 960px">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="./am.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="./tul.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="./windmill.jpg" alt="Third slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="./canal.jpg" alt="Fourth slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="./riji.jpg" alt="Fifth slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-
-    </div>
-    <br></br>
 <!--nav bar-->
     <div class="sticky-top">
         <div class="container justify-content-center">
@@ -110,69 +70,85 @@
     </div>
     <br></br>
   
-<!--list of potographer-->
-    <div class="container justify-content-center">
+<!--request form-->
+<div class="container justify-content-center">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-5">
-          <ul class="list-unstyled">
-              <li class="media">
-                <img class="mr-3" src="https://image.flaticon.com/icons/svg/145/145859.svg" alt="Generic placeholder image" width=128>
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">Photographer 1 </h5><p>4.7<img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15></p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                  <br><span class="badge badge-light">wedding</span> <span class="badge badge-light">Paris</span> 
-                </div>
-              </li>
-              <li class="media my-4">
-                <img class="mr-3" src="https://image.flaticon.com/icons/svg/145/145864.svg" alt="Generic placeholder image" width=128>
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">Photographer 1 </h5><p>4.7<img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15></p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                  <span class="badge badge-light">wedding</span> <span class="badge badge-light">Paris</span> 
-                </div>
-              </li>
-              <li class="media">
-                <img class="mr-3" src="https://www.flaticon.com/premium-icon/icons/svg/145/145857.svg" alt="Generic placeholder image" width=128>
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">Photographer 1 </h5><p>3.8<img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15></p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                  <span class="badge badge-light">wedding</span> <span class="badge badge-light">Paris</span> 
-                </div>
-              </li>
-            </ul>
-        <br></br>
+
+<div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Looking for photographer for your peoject?</h4>
+    <h4 class="mb-3">Get your request listed on our home page</h4> 
+    <form class="needs-validation" novalidate="">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="firstName">First name</label>
+          <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lastName">Last name</label>
+          <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            Valid last name is required.
+          </div>
+        </div>
       </div>
-      <div class="col-12 col-md-5">
-          <ul class="list-unstyled">
-              <li class="media">
-                <img class="mr-3" src="https://image.flaticon.com/icons/svg/145/145867.svg" alt="Generic placeholder image" width=128>
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">Photographer 1 </h5><p>4.7<img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15></p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                  <span class="badge badge-light">Wedding</span> <span class="badge badge-light">Paris</span> <span class="badge badge-light">Nikon D7200</span>
-                </div>
-              </li>
-              <li class="media my-4">
-                <img class="mr-3" src="https://www.flaticon.com/premium-icon/icons/svg/145/145865.svg" alt="Generic placeholder image" width=128>
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">Photographer 1 </h5><p>4.7<img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15></p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                  <span class="badge badge-light">wedding</span> <span class="badge badge-light">Paris</span> 
-                </div>
-              </li>
-              <li class="media">
-                <img class="mr-3" src="https://image.flaticon.com/icons/svg/145/145862.svg" alt="Generic placeholder image" width=128>
-                <div class="media-body">
-                  <h5 class="mt-0 mb-1">Photographer 1 </h5><p>4.7<img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15><img class="mr-3" src="./rate.png" alt="rate" width=15></p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                  <span class="badge badge-light">wedding</span> <span class="badge badge-light">Paris</span> 
-                </div>
-              </li>
-            </ul>
-        <br></br>
+
+      <div class="mb-3">
+        <label for="email">Email </label>
+        <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
+        <div class="invalid-feedback">
+          Please enter a valid email address so that the photographer could contact you.
+        </div>
       </div>
+
+      <div class="mb-3">
+        <label for="address">Location of project</label>
+        <input type="text" class="form-control" id="address" placeholder="1234 Main St, City, Nation " required="">
+        <div class="invalid-feedback">
+          Please enter the location of your project.
+        </div>
+      </div>
+
+
+      <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Expected Date</label>
+              <input type="text" class="form-control" id="date" placeholder="DD/MM/YYYY" value="" required="">
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Budget<span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="budget" >
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
+
+
+    <div class="form-group">
+            <label for="more">Tell us more about yout project</label>
+            <textarea class="form-control" id="more" rows="3"></textarea>
     </div>
-    </div>
+
+      <hr class="mb-4">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="save-info">
+        <label class="custom-control-label" for="save-info">I have read and agree with the policy</label>
+      </div>
+      <br>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Publish My Request</button>
+    </form>
+  </div> 
+
+  
+
+  </div>
+  </div>
 
 
 
