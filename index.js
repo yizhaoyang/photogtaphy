@@ -1,27 +1,38 @@
 const express = require('express')
 const app = express()
 
-// create database
-var MongoClient = require('mongodb').MongoClient
-, format = require('util').format;
+//create database
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+ 
+// Connection URL
+const url = 'mongodb://localhost:27017/test';
+ 
+// Database Name
+const dbName = 'requests';
+ 
+// Use connect method to connect to the server
+MongoClient.connect(url, function(err, client) {
+  assert.equal(null, err);
+  console.log("Connected successfully to server");
+ 
+  const db = client.db(dbName);
+ 
+  client.close();
+});
 
-MongoClient.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
-if(err) throw err;
 
-var collection = db.collection('initiators');
-collection.insert({a:2}, function(err, docs) {
-    collection.count(function(err, count) {
-        console.log(format("count = %s", count));
+const findDocuments = function(db, callback) {
+    // Get the documents collection
+    const collection = db.collection('initiators');
+    // Find some documents
+    collection.find({}).toArray(function(err, docs) {
+      assert.equal(null, err);
+      console.log("Found the following records");
+      console.log(docs)
+      callback(docs);
     });
-});
-
-// Locate all the entries using find
-collection.find().toArray(function(err, results) {
-    console.dir(results);
-    // Let's close the db
-    db.close();
-});
-});
+  }
 
 
 
@@ -29,8 +40,9 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/mysecret', (req, res) => res.send('This is a confidential page.'))
 app.get('/home', (req, res) => res.sendFile('/Users/David/Documents/photography/home/home.html'))
 app.get('/request', (req, res) => res.sendFile('/Users/David/Documents/photography/request/request.html'))
+
+
 app.use(express.static('home'))
-
-
-
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
+
+
