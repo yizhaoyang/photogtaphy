@@ -36,6 +36,18 @@ const findDocuments = function(db, callback) {
 
 
 
+
+
+// form validation try
+$('#myForm')
+    .ajaxForm({
+        dataType : 'json',
+        success : function (response) {
+            alert("Your request in under process now" + response);
+        }
+    })
+;
+
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/mysecret', (req, res) => res.send('This is a confidential page.'))
 app.get('/home', (req, res) => res.sendFile('/Users/David/Documents/photography/home/home.html'))
