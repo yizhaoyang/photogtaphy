@@ -1,0 +1,40 @@
+h2{
+    color: #3ACEBE;
+    font-family: "Poiret One", Times, serif !important;
+    font-style: italic;
+
+ }
+  h5{
+    font-family: "SabonBQ", Times, serif !important; 
+  }
+ 
+  body {
+    font-family: "Futura", sans-serif !important;
+  }
+
+  body .btn-primary {
+    background-color: #3ACEBE !important;
+    border-color: #3ACEBE !important;
+    color: #FFF; }
+
+  body .btn-outline-success {
+    border-color: #3ACEBE !important;
+    color: #3ACEBE ; }
+
+  body .btn-outline-success:hover {
+    color: #fff;
+    background-color: #3ACEBE;
+    border-color: #3ACEBE;
+    
+
+   
+ 
+ p{
+     color: #393e46;
+     font-family: "Futura", Times, serif;   
+ }
+
+
+ ul{
+     color: #393e46;
+ }
