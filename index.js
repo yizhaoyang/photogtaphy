@@ -1,14 +1,37 @@
-const express = require('express')
-const app = express()
 
-//create database
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
+const express = require('express');
+const exphbs  = require('express-handlebars');
+const bodyParser = require('body-parser');
+const mongo = require('mongodb');
+
+let MongoClient = require('mongodb').MongoClient;
+let url = "mongodb://localhost:27017";
+
+MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("request");
+
+    const app = express();
+    app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+    app.set('view engine', 'handlebars');
+
+    // parse application/x-www-form-urlencoded
+    app.use(bodyParser.urlencoded({ extended: false }))
+
+    // parse application/json
+    app.use(bodyParser.json())
  
-// Connection URL
-const url = 'mongodb://localhost:27017/test';
- 
-// Database Name
+    
+
+
+
+
+
+
+
+
+
+/////////////////// Database Name
 const dbName = 'requests';
  
 // Use connect method to connect to the server
@@ -17,8 +40,6 @@ MongoClient.connect(url, function(err, client) {
   console.log("Connected successfully to server");
  
   const db = client.db(dbName);
- 
-  client.close();
 });
 
 
@@ -37,21 +58,10 @@ const findDocuments = function(db, callback) {
 
 
 
-
-// form validation try
-$('#myForm')
-    .ajaxForm({
-        dataType : 'json',
-        success : function (response) {
-            alert("Your request in under process now" + response);
-        }
-    })
-;
-
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/mysecret', (req, res) => res.send('This is a confidential page.'))
-app.get('/home', (req, res) => res.sendFile('/Users/David/Documents/photography/home/home.html'))
-app.get('/request', (req, res) => res.sendFile('/Users/David/Documents/photography/request/request.html'))
+app.get('/client', (req, res) => res.sendFile('/Users/David/Documents/photography/client/home.html'))
+app.get('/request', (req, res) => res.sendFile('/Users/David/Documents/photography/client/home.html'))
 
 
 app.use(express.static('home'))
