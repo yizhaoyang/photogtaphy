@@ -21,50 +21,43 @@ MongoClient.connect(url, function(err, db) {
     // parse application/json
     app.use(bodyParser.json())
  
-    
-
-
-
-
-
-
-
-
-
-/////////////////// Database Name
-const dbName = 'requests';
- 
-// Use connect method to connect to the server
-MongoClient.connect(url, function(err, client) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
- 
-  const db = client.db(dbName);
-});
-
-
-const findDocuments = function(db, callback) {
-    // Get the documents collection
-    const collection = db.collection('initiators');
-    // Find some documents
-    collection.find({}).toArray(function(err, docs) {
-      assert.equal(null, err);
-      console.log("Found the following records");
-      console.log(docs)
-      callback(docs);
+    app.get('/request', function (req, res) {
+        res.render('request', {});
     });
-  }
+
+    app.post('/request', function (req, res) {
+        let firstName= (req.body.firstName);
+        let lastName= (req.body.lastName);
+        let email= (req.body.email);
+        let location= (req.body.location);
+        let budget= (req.body.budget);
+        let date= (req.body.time);
+        
+        dbo.collection("initiators").insertOne({firstName,lastName,email,location,budget,date},function(err, respo) {
+            if (err) throw err;
+            res.render('result', {});        
+          });
+    });
+
+    app.get('/results', function (req, res) {
+        dbo.collection("initiators").find({}).toArray(function(err, result) {
+            if (err) throw err;
+            res.render('result', {request:result});
+          });
+    });
+
+
+    /*app.get('/:users', function (req, res) {
+        res.render('home', {users:req.params.users.split(",")});
+    });*/
+  
+
+    app.use(express.static('client'));
+
+    app.listen(3000, () => console.log('Example app listening on port 3000!'));
+});    
 
 
 
-
-app.get('/', (req, res) => res.send('Hello World!'))
-app.get('/mysecret', (req, res) => res.send('This is a confidential page.'))
-app.get('/client', (req, res) => res.sendFile('/Users/David/Documents/photography/client/home.html'))
-app.get('/request', (req, res) => res.sendFile('/Users/David/Documents/photography/client/home.html'))
-
-
-app.use(express.static('home'))
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
 
 
