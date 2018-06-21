@@ -1,0 +1,102 @@
+h2{
+    color: #3ACEBE;
+    font-family: "Poiret One", Times, serif !important;
+    font-style: Georgia;
+ }
+ h3{
+   color: darkgrey;
+  
+
+ }
+  h5{
+
+    color: #393e46;
+    text-aligh: margin-right; 
+  
+  }
+ 
+  body {
+
+    font-family: "Futura", sans-serif !important;
+    background-image:url"./background-image.jpg";
+    
+    background-repeat: no-repeat;
+  }
+
+  body .btn-primary {
+   background-color: #3ACEBE !important;
+    border-color: #3ACEBE !important;
+    color: #FFF; }
+
+  body .btn-outline-success {
+    border-color: #3ACEBE !important;
+    color: #3ACEBE ; }
+
+  body .btn-outline-success:hover {
+    color: #fff;
+    background-color: #3ACEBE;
+    border-color: #3ACEBE;}
+    
+.nametitle {
+    color: red;
+    font-style: bold;
+}
+   
+ 
+ p{
+     color: #393e46;
+     font-family: "Futura", Times, serif;  
+     padding: 25px; 
+ }
+
+
+ ul{
+     color: #393e46;
+     text-aligh: margin-right;
+ }
+
+ 
+body,p{margin: 0;}
+.parentWrap{
+    overflow: hidden;
+}
+.parent{
+    margin-right: 0px;
+    overflow: hidden;
+}
+.child{
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding-right: 0px;
+    box-sizing: border-box;
+    background-clip: content-box;
+    text-align: center;
+    opacity:20%;
+    margin: 0 auto;
+    position:relative;
+}
+#banner {
+  background-image: url("./photographer.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  height: 700px;
+  width: 555px;
+  float:right;
+  opacity:20%;
+
+}
+
+#banner .content h1  {
+  border: 1px solid ;
+  position: relative;
+  top: 200px;
+  width: 400px;
+  margin:  0 auto;
+  font-style: Futura;
+  color: lightgray;
+  font-style: "cursive";
+  
+}
+
+
