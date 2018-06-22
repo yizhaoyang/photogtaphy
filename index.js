@@ -54,7 +54,7 @@ MongoClient.connect(url, function(err, db) {
 
     app.use(express.static('client'));
 
-    app.listen(3000, () => console.log('Example app listening on port 3000!'));
+    app.listen(3003, () => console.log('Example app listening on port 3003!'));
 });    
 
 
